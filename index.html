@@ -380,74 +380,7 @@ html[dir="rtl"] #cover .badge{letter-spacing:0}
 @keyframes visualReveal{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready .motion-item{opacity:1!important;transform:none!important}}
 @media print{.landing-index,.reading-progress{display:none!important}.motion-ready .motion-item{opacity:1!important;transform:none!important}*,*::before,*::after{animation:none!important;transition:none!important}}
-</style><style id="cinema-stage-v2">
-.cinema-stage{display:none}.cinema-stage.ready{display:block}
-.cinema-stage{position:relative;isolation:isolate;overflow:hidden;min-width:0;border:1px solid #c6a05a70;border-radius:23px;background:#071a1d;box-shadow:0 30px 75px #0008;margin-bottom:32px;direction:ltr}
-.cinema-stage .film{position:relative;height:clamp(410px,62vh,650px);overflow:hidden;isolation:isolate;background:#071a1d}
-.cinema-stage .shot{position:absolute;inset:0;opacity:0;visibility:hidden;overflow:hidden;transition:opacity .9s cubic-bezier(.2,.7,.2,1),visibility .9s;pointer-events:none}
-.cinema-stage .shot.current{opacity:1;visibility:visible;z-index:2}
-.cinema-stage .shot.leaving{opacity:0;visibility:visible;z-index:1}
-.cinema-stage .camera{position:absolute;inset:-9%;background-size:cover;background-position:center;will-change:transform;transform:scale(1.03)}
-.cinema-stage .shot:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#071a1df5 0%,#071a1dd9 28%,#071a1d70 62%,#071a1d15 100%),linear-gradient(0deg,#071a1ddd,transparent 40%);pointer-events:none}
-.cinema-stage .shot[data-scene="0"] .camera{background-position:65% center}
-.cinema-stage .shot[data-scene="1"] .camera{background-position:72% center}
-.cinema-stage .shot[data-scene="2"] .camera{background-position:80% center}
-.cinema-stage .shot.current[data-scene="0"] .camera{animation:filmPush 9s linear both}
-.cinema-stage .shot.current[data-scene="1"] .camera{animation:filmTrack 9s linear both}
-.cinema-stage .shot.current[data-scene="2"] .camera{animation:filmPull 9s linear both}
-.cinema-stage .copy{position:absolute;z-index:3;inset-inline-start:6%;top:50%;width:min(69%,660px);transform:translateY(-50%);text-align:start}
-.cinema-stage .chapter{display:flex;align-items:center;gap:12px;color:#edcf93;font-size:12px;letter-spacing:.18em;font-weight:800;text-transform:uppercase;margin-bottom:18px}
-.cinema-stage .chapter:before{content:"";width:42px;height:1px;background:#c6a05a;box-shadow:0 0 16px #c6a05a}
-.cinema-stage .film-title{font-size:clamp(38px,5.7vw,82px);line-height:1.06;font-weight:750;color:#eef8f6;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 5px 28px #0009}
-.cinema-stage .film-rule{height:2px;width:min(260px,70%);background:linear-gradient(90deg,#c6a05a,#2bb3a3,transparent);margin:23px 0 16px;transform-origin:left}
-.cinema-stage .film-description{font-size:clamp(15px,1.5vw,21px);line-height:1.75;color:#e0eeea;max-width:47ch;text-shadow:0 2px 15px #000}
-.cinema-stage .current .chapter{animation:filmCaption 8.8s both}
-.cinema-stage .current .film-title{animation:filmText 8.8s .15s both}
-.cinema-stage .current .film-rule{animation:filmLine 8.8s .25s both}
-.cinema-stage .current .film-description{animation:filmSub 8.8s .35s both}
-.cinema-stage .film-grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.16;background-image:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,#ffffff15 4px,transparent 5px);mix-blend-mode:screen}
-.cinema-stage .film-flare{position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(110deg,transparent 30%,#c6a05a66 49%,#d6e8d755 50%,transparent 67%);transform:translateX(-150%);opacity:0}
-.cinema-stage .film-flare.flash{animation:filmFlash .95s ease-out both}
-.cinema-stage .film-overlay{position:absolute;inset:18px 20px auto 20px;z-index:6;display:flex;justify-content:space-between;gap:8px;align-items:center;color:#e6cc96;font-size:10px;letter-spacing:.16em;font-weight:700;pointer-events:none}
-.cinema-stage .film-overlay span:last-child{font-variant-numeric:tabular-nums;background:#071a1d80;border:1px solid #c6a05a50;border-radius:30px;padding:6px 10px}
-.cinema-stage .film-controls{position:relative;z-index:7;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:15px 18px;background:linear-gradient(90deg,#102f34,#071a1d);border-top:1px solid #c6a05a55}
-.cinema-stage .film-buttons{display:flex;gap:7px;flex-wrap:wrap}
-.cinema-stage button{font:inherit;font-size:12px;font-weight:700;border:1px solid #c6a05a70;background:#102f34;color:#eef8f6;border-radius:9px;padding:9px 13px;cursor:pointer;min-height:40px}
-.cinema-stage button:hover,.cinema-stage button:focus-visible{border-color:#edcf93;background:#174b4d;outline:1px solid #edcf93}
-.cinema-stage .film-play{background:#c6a05a;color:#071a1d;min-width:86px}
-.cinema-stage .film-chapters{display:flex;gap:6px;flex:1;min-width:190px}
-.cinema-stage .film-chapters button{flex:1;min-width:0;display:flex;gap:5px;align-items:center;justify-content:center;white-space:normal;text-align:center}
-.cinema-stage .film-chapters button[aria-current="true"]{color:#edcf93;border-color:#edcf93;background:#174044}
-.cinema-stage .film-timeline{height:3px;background:#ffffff14;position:relative}
-.cinema-stage .film-timeline span{display:block;width:0;height:100%;background:linear-gradient(90deg,#c6a05a,#2bb3a3);box-shadow:0 0 10px #c6a05a}
-.cinema-stage .ar{display:none}
-html[lang="ar"] .cinema-stage .en{display:none}
-html[lang="ar"] .cinema-stage .ar{display:inline}
-html[lang="ar"] .cinema-stage .copy{direction:rtl;text-align:right;left:auto;right:6%;width:min(72%,650px)}
-html[lang="ar"] .cinema-stage .film-title{letter-spacing:0;line-height:1.35}
-html[lang="ar"] .cinema-stage .chapter{letter-spacing:0}
-html[lang="ar"] .cinema-stage .shot:after{background:linear-gradient(270deg,#071a1df5 0%,#071a1dd9 28%,#071a1d70 62%,#071a1d15 100%),linear-gradient(0deg,#071a1ddd,transparent 40%)}
-html[lang="ar"] .cinema-stage .film-rule{transform-origin:right;background:linear-gradient(270deg,#c6a05a,#2bb3a3,transparent)}
-html[lang="ar"] .cinema-stage .film-controls{direction:rtl}
-.cinema-stage.paused .shot *{animation-play-state:paused!important}
-.cinema-stage.manual .current .chapter,.cinema-stage.manual .current .film-title,.cinema-stage.manual .current .film-rule,.cinema-stage.manual .current .film-description{animation:none!important;opacity:1;transform:none;clip-path:none}
-.cinema-stage.manual .current .camera{animation:none!important}
-.cinema-stage:fullscreen{display:flex;flex-direction:column;justify-content:center;border:0;border-radius:0;margin:0;background:#071a1d}
-.cinema-stage:fullscreen .film{height:calc(100vh - 95px)}
-@media screen{#cover{justify-content:flex-start;min-height:0;padding:clamp(16px,2.8vw,42px)}#cover .hero{padding:clamp(10px,2vw,24px) 0 0}#cover .hero>div:first-child>h2{font-size:clamp(32px,3.1vw,54px)}#cover .hero .executive-card{box-shadow:none}.motion-ready #cover .hero>div:first-child>*{animation:none}.motion-ready #cover .executive-card{animation:none}}
-@media(max-width:900px){.cinema-stage .film{height:clamp(420px,67vw,530px)}.cinema-stage .copy{width:82%;top:52%}.cinema-stage .film-title{font-size:clamp(32px,6vw,54px)}.cinema-stage .shot:after{background:linear-gradient(90deg,#071a1dec,#071a1d9c 55%,#071a1d30),linear-gradient(0deg,#071a1dcc,transparent 40%)}html[lang="ar"] .cinema-stage .copy{width:82%}.cinema-stage .film-controls{padding:11px;gap:9px}.cinema-stage .film-chapters{flex-basis:100%}}
-@media(max-width:600px){.cinema-stage{border-radius:15px;margin-bottom:20px}.cinema-stage .film{height:420px}.cinema-stage .film-overlay{inset:13px 12px auto;font-size:9px}.cinema-stage .copy{width:87%;top:52%}.cinema-stage .film-title{font-size:clamp(32px,8.7vw,46px)}.cinema-stage .film-description{font-size:15px;line-height:1.65}.cinema-stage .chapter{font-size:10px;letter-spacing:.08em;gap:7px;margin-bottom:12px}.cinema-stage .chapter:before{width:22px}.cinema-stage .film-rule{margin:15px 0 12px}.cinema-stage button{font-size:11px;padding:8px 10px}.cinema-stage .film-chapters button{font-size:10px}.cinema-stage .film-buttons{gap:5px}.cinema-stage .film-play{min-width:65px}html[lang="ar"] .cinema-stage .copy{width:87%}#cover{padding:13px}}
-@keyframes filmPush{from{transform:scale(1.02) translate(3%,1%)}to{transform:scale(1.35) translate(-5%,-3%)}}
-@keyframes filmTrack{from{transform:scale(1.22) translate(-6%,2%)}to{transform:scale(1.32) translate(7%,-3%)}}
-@keyframes filmPull{from{transform:scale(1.43) translate(-5%,-3%)}to{transform:scale(1.04) translate(2%,2%)}}
-@keyframes filmCaption{0%{opacity:0;transform:translateY(-20px)}12%,85%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-12px)}}
-@keyframes filmText{0%{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(32px)}13%,84%{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0)}100%{opacity:0;clip-path:inset(100% 0 0 0);transform:translateY(-20px)}}
-@keyframes filmLine{0%{opacity:0;transform:scaleX(0)}16%,87%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(0)}}
-@keyframes filmSub{0%{opacity:0;transform:translateY(25px)}18%,82%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-18px)}}
-@keyframes filmFlash{0%{transform:translateX(-150%);opacity:0}35%{opacity:.85}100%{transform:translateX(150%);opacity:0}}
-@media(prefers-reduced-motion:reduce){.cinema-stage .shot,.cinema-stage .shot *{animation:none!important;transition:none!important}}
-@media print{.cinema-stage{display:none!important}}
-</style><style>.cinema-stage.pseudo-full{position:fixed;inset:0;z-index:2147483002;display:flex;flex-direction:column;justify-content:center;margin:0;border:0;border-radius:0}.cinema-stage.pseudo-full .film{height:calc(100dvh - 105px)}.cinema-stage.pseudo-full .film-controls{flex-shrink:0}</style><style id="visual-system-v6">
+</style><style id="visual-system-v6">
 :root{--tool1:#2bb3a3;--tool2:#c6a05a;--tool3:#45b386;--tool4:#82a9c3;--tool5:#d98b79;--tool6:#a9a0d5;--tool7:#9dc6ad}
 @media screen{
 main section:not(#cover){position:relative;isolation:isolate;min-height:0;padding-bottom:42px}
@@ -511,6 +444,71 @@ main section:not(#cover){position:relative;isolation:isolate;min-height:0;paddin
 @keyframes iconPop{from{transform:scale(.65) rotate(-12deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
 @media print{.tool-grid,.cycle-layout,.cycle-legend,.cycle-controls,.visual-toggle,.section-rail,.rate-meter{display:none!important}.source-table-visual,#simulation>.process.cycle-source{display:block!important}.motion-v6 *{animation:none!important;opacity:1!important;transform:none!important}}
 @media(prefers-reduced-motion:reduce){.motion-v6 .tool-card,.motion-v6 .cycle-layout,.motion-v6 .section-rail{opacity:1!important;transform:none!important;animation:none!important}.cycle-wheel .orbit{animation:none!important}}
+</style><style id="distributed-motion-v7">
+@media screen{
+html{scroll-padding-top:76px}main section{scroll-margin-top:76px}
+#cover{min-height:calc(100svh - 106px);justify-content:center}
+#cover .hero{padding:0}
+.language-switch{top:10px!important;right:10px!important;padding:3px!important;gap:4px!important;border-radius:10px!important}
+html[dir=rtl] .language-switch{left:10px!important;right:auto!important}
+.language-switch button{min-height:30px!important;padding:5px 9px!important;font-size:12px!important}
+.print-btn{position:static;margin:12px auto 26px;display:flex;width:max-content}
+#framework .visual,#quality .visual,#cover .executive-card .visual{max-width:none;aspect-ratio:16/9;position:relative;isolation:isolate;overflow:hidden;background:#071a1d}
+.local-scene img{height:100%;object-fit:cover;animation:none!important;transform:scale(1.03);will-change:transform}
+.local-scene.scene-live img{animation:localCamera 10s ease-in-out infinite alternate!important}
+#framework .local-scene.scene-live img{animation-name:localTrack!important}
+#quality .local-scene.scene-live img{animation-name:localPull!important}
+.local-scene:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(0deg,#071a1de8,transparent 65%),linear-gradient(100deg,transparent 30%,#c6a05a15 50%,transparent 70%)}
+.local-scene .scene-copy{position:absolute;inset-inline:5%;bottom:8%;z-index:4;color:#fff;text-shadow:0 3px 12px #000;font-size:clamp(18px,3vw,36px);font-weight:750;line-height:1.35}
+.local-scene.scene-live .scene-copy{animation:sceneText 7s both infinite}
+.local-scene .scene-beam{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(110deg,transparent 37%,#c6a05a66 49%,transparent 57%);transform:translateX(-130%)}
+.local-scene.scene-live .scene-beam{animation:sceneBeam 7s linear infinite}
+.local-scene .scene-orbit{position:absolute;inset:15% 20%;border:1px solid #c6a05a66;border-radius:50%;z-index:3;pointer-events:none;transform:rotate(-18deg);box-shadow:0 0 20px #c6a05a18}
+.local-scene.scene-live .scene-orbit{animation:sceneOrbit 6s ease-in-out infinite alternate}
+.local-scene .particle{position:absolute;z-index:3;width:3px;height:3px;background:#f3d49d;border-radius:50%;box-shadow:0 0 8px #c6a05a;opacity:0}
+.local-scene.scene-live .particle{animation:particleFloat 5s var(--delay) infinite}
+.visual-board{margin:20px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.visual-tile{--accent:#2bb3a3;position:relative;isolation:isolate;border:1px solid var(--accent);background:linear-gradient(145deg,#174044,#0a2326);border-radius:15px;padding:18px;overflow:hidden;min-width:0}
+.visual-tile:nth-child(3n+2){--accent:#c6a05a}.visual-tile:nth-child(3n+3){--accent:#82a9c3}
+.visual-tile h3{color:var(--accent);font-size:17px;line-height:1.45;margin:0 0 10px}.visual-tile p{font-size:14px;margin:0;line-height:1.65}
+.visual-tile .tile-icon{font-size:26px;color:var(--accent);display:block;margin-bottom:10px;line-height:1}
+.visual-tile .tile-index{position:absolute;inset-inline-end:14px;top:12px;font-size:32px;color:var(--accent);opacity:.25;font-weight:800}
+.visual-tile .tile-progress{height:2px;background:var(--accent);margin-top:14px;transform-origin:0 50%}
+.visual-tile.live .tile-progress{animation:tileDraw 1.5s both}
+.visual-tile.live .tile-icon{animation:iconFloat 2.7s ease-in-out infinite}
+.visual-tile.live h3{animation:localText .75s both}
+.visual-tile.live p{animation:localText .9s .1s both}
+.diagram-title{font-size:clamp(19px,2.5vw,26px);color:var(--gold);margin:28px 0 12px}
+.lines-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.lines-board .visual-tile{border-top:4px solid var(--accent)}
+.lines-board .visual-tile:before{content:"";position:absolute;inset:-50%;z-index:-1;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent) 13%,transparent),transparent 65%);animation:sceneOrbit 6s infinite alternate}
+#framework .two-col .process,#cpd .two-col .process,#cpd .two-col>.card,#framework .grid>article:nth-child(2),#quality>div.card{display:none}
+#framework .two-col .process.detail-open,#cpd .two-col .process.detail-open{display:grid}
+#cpd .two-col>.card.detail-open,#framework .grid>article:nth-child(2).detail-open,#quality>div.card.detail-open{display:block}
+#framework .two-col,#cpd .two-col{grid-template-columns:1fr}
+#framework .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#committees .card{position:relative;padding-top:66px}
+#committees .card .committee-symbol{position:absolute;top:15px;inset-inline-start:20px;font-size:24px;color:var(--gold)}
+#committees .card.live .committee-symbol{animation:iconFloat 3s ease-in-out infinite}
+#dashboard #rates{grid-template-columns:repeat(2,minmax(0,1fr))}
+#rates .rate-ring{width:104px;height:104px;display:grid;place-items:center;margin:5px auto 14px;border-radius:50%;background:conic-gradient(var(--teal) var(--pct,0%),#ffffff16 0);position:relative;transition:--pct .7s}
+#rates .rate-ring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:#102f34}
+#rates .rate-ring span{z-index:1;color:var(--gold);font-weight:800;font-size:16px}
+#rates .rate-meter{display:none}
+@media(max-width:600px){.visual-board{grid-template-columns:1fr 1fr;gap:9px}.visual-tile{padding:13px}.visual-tile h3{font-size:15px}.visual-tile p{font-size:12px}.lines-board{grid-template-columns:1fr}.lines-board .visual-tile p{font-size:14px}#dashboard #rates{grid-template-columns:1fr 1fr;gap:9px}#rates .card{padding:12px}#rates .card h4{font-size:14px}#rates .rate-ring{width:78px;height:78px}#framework .grid{grid-template-columns:1fr}#cover{min-height:0}.local-scene .scene-copy{font-size:19px}.language-switch{top:6px!important}.tool-card{padding:15px}.tool-card h3{font-size:17px}}
+}
+@keyframes localCamera{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.25) translate(-4%,2%)}}
+@keyframes localTrack{from{transform:scale(1.2) translate(-5%,0)}to{transform:scale(1.25) translate(5%,-2%)}}
+@keyframes localPull{from{transform:scale(1.3) translate(3%,2%)}to{transform:scale(1.03) translate(0,0)}}
+@keyframes sceneBeam{0%,20%{transform:translateX(-130%)}65%,100%{transform:translateX(130%)}}
+@keyframes sceneOrbit{from{transform:rotate(-18deg) scale(.92);opacity:.4}to{transform:rotate(8deg) scale(1.1);opacity:.9}}
+@keyframes sceneText{0%{opacity:0;transform:translateY(18px)}15%,85%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-12px)}}
+@keyframes particleFloat{0%{opacity:0;transform:translate(0,12px)}30%,70%{opacity:.85}100%{opacity:0;transform:translate(16px,-45px)}}
+@keyframes tileDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes localText{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media print{.visual-board,.lines-board,.diagram-title,.scene-copy,.scene-beam,.scene-orbit,.particle,.committee-symbol,.rate-ring,.v7-detail{display:none!important}#framework .two-col .process,#cpd .two-col .process{display:grid!important}#cpd .two-col>.card,#framework .grid>article:nth-child(2),#quality>div.card{display:block!important}}
+@media(prefers-reduced-motion:reduce){.local-scene img,.local-scene *,.visual-tile *{animation:none!important}.scene-copy{opacity:1!important}}
 </style></head>
 <body>
 <div class="reading-progress" aria-hidden="true"><span></span></div>
@@ -537,13 +535,7 @@ main section:not(#cover){position:relative;isolation:isolate;min-height:0;paddin
 <a href="#scfhs"><span class="dot"></span> SCFHS Requirements</a></nav>
 </aside>
 <main>
-<section id="cover"><div class="cinema-stage" id="cinemaStage" aria-label="Cinematic introduction / مقدمة سينمائية"><div class="film"><div class="film-overlay"><span>CPD / SCFHS</span><span class="film-count">01 / 03</span></div>
-<div class="shot" data-scene="0"><div class="camera"></div><div class="copy"><div class="chapter"><span class="en" lang="en">01 / GOVERNANCE</span><span class="ar" lang="ar">01 / الحوكمة</span></div><div class="film-title"><span class="en" lang="en">CPD Committees Governance Project</span><span class="ar" lang="ar">مشروع حوكمة لجان التطوير المهني المستمر</span></div><div class="film-rule"></div><div class="film-description"><span class="en" lang="en">Clear mandate, delegated decision rights, accountable ownership and traceable evidence.</span><span class="ar" lang="ar">اختصاصات واضحة وصلاحيات مفوضة ومسؤوليات محددة وأدلة قابلة للتتبع.</span></div></div></div>
-<div class="shot" data-scene="1"><div class="camera"></div><div class="copy"><div class="chapter"><span class="en" lang="en">02 / ACTIVITY LIFECYCLE</span><span class="ar" lang="ar">02 / دورة حياة النشاط</span></div><div class="film-title"><span class="en" lang="en">From planning to improvement</span><span class="ar" lang="ar">من التخطيط إلى التحسين</span></div><div class="film-rule"></div><div class="film-description"><span class="en" lang="en">Educational needs, scientific review, accreditation, evaluation and documented closure.</span><span class="ar" lang="ar">الاحتياجات التعليمية والمراجعة العلمية والاعتماد والتقييم والإغلاق الموثق.</span></div></div></div>
-<div class="shot" data-scene="2"><div class="camera"></div><div class="copy"><div class="chapter"><span class="en" lang="en">03 / RISK &amp; COMPLIANCE</span><span class="ar" lang="ar">03 / المخاطر والامتثال</span></div><div class="film-title"><span class="en" lang="en">Evidence before assurance</span><span class="ar" lang="ar">الأدلة أساس التأكيد</span></div><div class="film-rule"></div><div class="film-description"><span class="en" lang="en">SCFHS requirements, control ownership and provider reaccreditation evidence.</span><span class="ar" lang="ar">متطلبات الهيئة ومسؤوليات الضوابط وأدلة تجديد اعتماد مقدم التطوير المهني المستمر.</span></div></div></div>
-<div class="film-grain" aria-hidden="true"></div><div class="film-flare" aria-hidden="true"></div></div>
-<div class="film-timeline" aria-hidden="true"><span></span></div><div class="film-controls"><div class="film-buttons"><button class="film-play" type="button"><span class="en" lang="en">Ⅱ Pause</span><span class="ar" lang="ar">Ⅱ إيقاف</span></button><button class="film-prev" type="button" aria-label="Previous / السابق">‹</button><button class="film-next" type="button" aria-label="Next / التالي">›</button><button class="film-full" type="button"><span class="en" lang="en">Full screen</span><span class="ar" lang="ar">ملء الشاشة</span></button><button class="film-skip" type="button"><span class="en" lang="en">Explore</span><span class="ar" lang="ar">استعراض</span></button></div><div class="film-chapters" role="group" aria-label="Scenes / المشاهد"><button data-go="0" type="button"><span class="en" lang="en">01 Governance</span><span class="ar" lang="ar">01 الحوكمة</span></button><button data-go="1" type="button"><span class="en" lang="en">02 Lifecycle</span><span class="ar" lang="ar">02 دورة النشاط</span></button><button data-go="2" type="button"><span class="en" lang="en">03 Compliance</span><span class="ar" lang="ar">03 الامتثال</span></button></div></div></div>
-<div class="hero">
+<section id="cover"><div class="hero">
 <div>
 <div class="badge">DISCUSSION DRAFT • NOT AN APPROVED GOVERNANCE INSTRUMENT</div>
 <h2>CPD Committees Governance Project</h2>
@@ -669,20 +661,6 @@ function setLanguage(next){lang=next==='ar'?'ar':'en';document.documentElement.l
 controls.forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));document.querySelectorAll('.rate-input').forEach(e=>e.addEventListener('input',translateResults));let stored='en';try{stored=localStorage.getItem('cpd-language')||'en'}catch(e){}const requested=new URLSearchParams(location.search).get('lang');setLanguage(requested==='ar'||requested==='en'?requested:stored);})();
 </script><script id="cinematic-motion">
 (()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)');const bar=document.querySelector('.reading-progress span');function progress(){const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?Math.min(100,Math.max(0,100*scrollY/max)):0)+'%'}addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);progress();if(reduce.matches)return;document.querySelectorAll('.landing-index a').forEach((e,i)=>e.style.setProperty('--index-delay',i*110+'ms'));if(!('IntersectionObserver' in window))return;const items=[...document.querySelectorAll('main section:not(#cover) > .kicker,main section:not(#cover) > h2,main section:not(#cover) > p,main section:not(#cover) .card,main section:not(#cover) .step,main section:not(#cover) .visual,main section:not(#cover) .table-wrap')];const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');observer.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -28px 0px'});items.forEach(e=>{e.classList.add('motion-item');const i=[...e.parentElement.children].indexOf(e);e.style.setProperty('--motion-delay',Math.min(240,i*55)+'ms');observer.observe(e)});document.documentElement.classList.add('motion-ready');})();
-</script><script id="cinema-player-v2">
-(()=>{const stage=document.getElementById('cinemaStage');if(!stage)return;const shots=[...stage.querySelectorAll('.shot')],sources=[document.querySelector('#cover .executive-card img'),document.querySelector('#framework .visual img'),document.querySelector('#quality .visual img')];if(sources.some(x=>!x))return;shots.forEach((shot,i)=>shot.querySelector('.camera').style.backgroundImage='url("'+sources[i].getAttribute('src')+'")');const buttons=[...stage.querySelectorAll('[data-go]')],counter=stage.querySelector('.film-count'),flare=stage.querySelector('.film-flare'),timeline=stage.querySelector('.film-timeline span'),play=stage.querySelector('.film-play');const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,elapsed=0,last=0,playing=!reduced.matches,raf=0,visible=true;const duration=8800;
-function updatePlay(){play.querySelector('.en').textContent=playing?'Ⅱ Pause':'▶ Play';play.querySelector('.ar').textContent=playing?'Ⅱ إيقاف':'▶ تشغيل';stage.classList.toggle('paused',!playing)}
-function show(i,manual){const old=shots[index];shots.forEach(x=>{x.classList.remove('current','leaving');x.setAttribute('aria-hidden','true')});index=(i+shots.length)%shots.length;const cur=shots[index];if(old!==cur){old.classList.add('leaving');setTimeout(()=>old.classList.remove('leaving'),950)}void cur.offsetWidth;cur.classList.add('current');cur.setAttribute('aria-hidden','false');stage.classList.toggle('manual',manual);buttons.forEach((b,j)=>b.setAttribute('aria-current',String(j===index)));counter.textContent=String(index+1).padStart(2,'0')+' / 03';elapsed=0;last=0;timeline.style.width='0%';if(!manual){flare.classList.remove('flash');void flare.offsetWidth;flare.classList.add('flash')}}
-function tick(t){if(!playing||!visible){raf=0;last=0;return}if(last)elapsed+=Math.min(t-last,100);last=t;if(elapsed>=duration)show(index+1,false);timeline.style.width=100*elapsed/duration+'%';raf=requestAnimationFrame(tick)}
-function start(){if(!raf&&playing&&visible)raf=requestAnimationFrame(tick)}
-function pause(){playing=false;updatePlay();if(raf)cancelAnimationFrame(raf);raf=0;last=0}
-function go(i){show(i,!playing);updatePlay();start()}
-play.addEventListener('click',()=>{if(playing)pause();else{playing=true;if(stage.classList.contains('manual'))show(index,false);updatePlay();start()}});
-stage.querySelector('.film-prev').addEventListener('click',()=>go(index-1));stage.querySelector('.film-next').addEventListener('click',()=>go(index+1));buttons.forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.go))));
-stage.querySelector('.film-full').addEventListener('click',()=>{if(document.fullscreenElement){document.exitFullscreen?.();return}if(stage.requestFullscreen){stage.requestFullscreen().catch(()=>{stage.classList.toggle('pseudo-full')})}else stage.classList.toggle('pseudo-full')});
-stage.querySelector('.film-skip').addEventListener('click',()=>{pause();if(document.fullscreenElement)document.exitFullscreen?.();stage.classList.remove('pseudo-full');document.querySelector('#cover .hero').scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'})});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')stage.classList.remove('pseudo-full')});if('IntersectionObserver' in window)new IntersectionObserver(e=>{visible=e[0].isIntersecting;if(!visible){if(raf)cancelAnimationFrame(raf);raf=0;last=0;stage.classList.add('paused')}else{updatePlay();start()}},{threshold:.05}).observe(stage);
-stage.classList.add('ready');show(0,!playing);updatePlay();start();})();
 </script><script id="visual-system-v6-js">
 (()=>{const ar=()=>document.documentElement.lang==='ar',lang=(e,a)=>ar()?a:e, colors=['#2bb3a3','#c6a05a','#45b386','#82a9c3','#d98b79','#a9a0d5','#9dc6ad'], reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const make=(tag,cls,parent)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(parent)parent.appendChild(x);return x};const copy=(target,source)=>{target.textContent=source.textContent.trim()};
@@ -704,5 +682,23 @@ prev.onclick=()=>select(active-1,true);next.onclick=()=>select(active+1,true);pl
 document.querySelectorAll('main section:not(#cover)').forEach((sec,i)=>{const rail=make('div','section-rail');rail.setAttribute('aria-hidden','true');make('b','',rail).textContent=String(i+1).padStart(2,'0');sec.prepend(rail);animateWatch(rail,0)});
 document.querySelectorAll('#rates .card').forEach(card=>{const meter=make('div','rate-meter',card),fill=make('span','',meter),out=card.querySelector('output');const sync=()=>{const v=parseFloat(out.textContent);fill.style.width=Number.isFinite(v)&&out.textContent.includes('%')?Math.min(100,Math.max(0,v))+'%':'0%'};new MutationObserver(sync).observe(out,{childList:true,characterData:true,subtree:true});sync()});
 function redraw(){redraws.forEach(fn=>fn())}new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});if(observer)document.documentElement.classList.add('motion-v6');})();
+</script><script id="distributed-motion-v7-js">
+(()=>{const root=document.documentElement,ar=()=>root.lang==='ar',tr=(e,a)=>ar()?a:e;const syncs=[];const make=(tag,cls,p)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(p)p.append(el);return el};const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const observer=!reduced&&'IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(e=>{e.target.classList.toggle(e.target.classList.contains('local-scene')?'scene-live':'live',e.isIntersecting)}),{threshold:.12}):null;
+function watch(e){if(observer)observer.observe(e);else e.classList.add(e.classList.contains('local-scene')?'scene-live':'live')}
+function scene(id,sel,en,arabic){const v=document.querySelector(id+' '+sel);if(!v)return;v.classList.add('local-scene');const copy=make('div','scene-copy',v);make('div','scene-beam',v);make('div','scene-orbit',v);for(let i=0;i<18;i++){let p=make('i','particle',v);p.style.left=(12+(i*37)%80)+'%';p.style.top=(12+(i*23)%70)+'%';p.style.setProperty('--delay',-(i%5)+'s')}const sync=()=>copy.textContent=tr(en,arabic);syncs.push(sync);sync();watch(v)}
+scene('#cover','.executive-card .visual','Authority before activity','تحديد الصلاحيات قبل التنفيذ');scene('#framework','.visual','From decision to improvement','من القرار إلى التحسين');scene('#quality','.visual','Evidence before assurance','الأدلة أساس التأكيد');
+const symbols=['◎','▤','◇','↗','✓','▣','◈'];
+function tiles(source,items,before){const board=make('div','visual-board');(before||source).before(board);items.forEach((it,i)=>{const card=make('article','visual-tile',board);make('span','tile-icon',card).textContent=symbols[i%7];make('span','tile-index',card).textContent=String(i+1).padStart(2,'0');const h=make('h3','',card),p=make('p','',card);make('div','tile-progress',card);const sync=()=>{h.textContent=it.h();p.textContent=it.p()};syncs.push(sync);sync();watch(card)});return board}
+function detail(source){const b=make('button','visual-toggle v7-detail');b.type='button';source.before(b);const sync=()=>b.textContent=source.classList.contains('detail-open')?tr('Hide detailed text','إخفاء النص التفصيلي'):tr('View detailed text','عرض النص التفصيلي');b.onclick=()=>{source.classList.toggle('detail-open');sync()};syncs.push(sync);sync()}
+function process(sel){const source=document.querySelector(sel);if(!source)return;const items=[...source.querySelectorAll('.step')].map(x=>({h:()=>x.querySelector('b').textContent,p:()=>x.querySelector('span').textContent}));tiles(source,items);detail(source)}
+process('#framework .two-col .process');process('#cpd .two-col .process');
+const lines=document.querySelector('#framework .grid>article:nth-child(2)');if(lines){const board=make('div','lines-board');const title=make('h3','diagram-title');lines.closest('.grid').before(title,board);const data=[['1 • Operational ownership','١ • المسؤولية التشغيلية','Manage risks and controls','إدارة المخاطر والضوابط'],['2 • Risk & compliance','٢ • المخاطر والامتثال','Support and challenge management','دعم الإدارة ومراجعة أدائها'],['3 • Internal audit','٣ • التدقيق الداخلي','Independent assurance','تأكيد مستقل']];const st=()=>title.textContent=tr('Three Lines','نموذج الخطوط الثلاثة');syncs.push(st);st();data.forEach((a,i)=>{const c=make('article','visual-tile',board);make('span','tile-icon',c).textContent=symbols[i];const h=make('h3','',c),p=make('p','',c);make('div','tile-progress',c);const sync=()=>{h.textContent=tr(a[0],a[1]);p.textContent=tr(a[2],a[3])};syncs.push(sync);sync();watch(c)});detail(lines)}
+const delivery=document.querySelector('#cpd .two-col>.card');if(delivery){const title=make('h3','diagram-title');delivery.before(title);const st=()=>title.textContent=tr('Core Deliverables','المخرجات الأساسية');syncs.push(st);st();const labels=[['Application & decision','الطلب والقرار'],['Annual calendar','التقويم السنوي'],['Disclosure records','سجلات الإفصاح'],['Evaluation & improvement','التقييم والتحسين'],['Learning change','التغير في التعلم']];tiles(delivery,[...delivery.querySelectorAll('li')].map((x,i)=>({h:()=>tr(...labels[i]),p:()=>x.textContent})));detail(delivery)}
+const risk=document.querySelector('#quality>div.card');if(risk){const title=make('h3','diagram-title');risk.before(title);const st=()=>title.textContent=tr('Risk treatment & compliance assurance','معالجة المخاطر والتأكد من الامتثال');syncs.push(st);st();const data=[['Inherent risk','المخاطر الكامنة','Record risk before controls','توثيق الخطر قبل الضوابط'],['Control effectiveness','فعالية الضوابط','Assess existing controls','تقييم الضوابط القائمة'],['Residual risk','المخاطر المتبقية','Apply approved risk matrix','تطبيق مصفوفة المخاطر المعتمدة'],['Treatment & escalation','المعالجة والتصعيد','Assign owner and review date','تحديد المسؤول وتاريخ المراجعة'],['Obligation mapping','ربط الالتزامات','Source, clause, owner and evidence','المصدر والبند والمسؤول والأدلة'],['Assurance review','مراجعة التأكيد','Define control test frequency','تحديد دورية اختبار الضوابط']];tiles(risk,data.map(a=>({h:()=>tr(a[0],a[1]),p:()=>tr(a[2],a[3])})));detail(risk)}
+document.querySelectorAll('#committees .card').forEach((c,i)=>{make('span','committee-symbol',c).textContent=symbols[i%7];watch(c)});
+document.querySelectorAll('#rates .card').forEach(c=>{const out=c.querySelector('output');if(!out)return;const ring=make('div','rate-ring');c.prepend(ring);const val=make('span','',ring);const sync=()=>{const n=parseFloat(out.textContent);const valid=Number.isFinite(n)&&out.textContent.includes('%');ring.style.setProperty('--pct',valid?Math.min(100,Math.max(0,n))+'%':'0%');val.textContent=valid?out.textContent:'—'};new MutationObserver(sync).observe(out,{childList:true,characterData:true,subtree:true});sync()});
+const print=document.querySelector('.print-btn');if(print)document.querySelector('main').append(print);
+new MutationObserver(()=>syncs.forEach(fn=>fn())).observe(root,{attributes:true,attributeFilter:['lang']});})();
 </script></body>
 </html>
