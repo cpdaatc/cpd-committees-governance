@@ -309,8 +309,16 @@
 .language-switch{display:flex;gap:8px;margin:0 12px 14px;align-items:center}.language-switch button{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:10px;padding:8px 15px;cursor:pointer;font-weight:700}.language-switch button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);background:rgba(198,160,90,.12)}
 html[dir="rtl"] body{font-family:"Segoe UI",Tahoma,Arial,sans-serif}html[dir="rtl"] aside{inset:0 0 0 auto;border-right:0;border-left:1px solid var(--line)}html[dir="rtl"] main{margin-left:0;margin-right:300px}html[dir="rtl"] h2{letter-spacing:0;line-height:1.35;font-size:clamp(28px,4vw,54px)}html[dir="rtl"] .kicker{letter-spacing:0}html[dir="rtl"] th,html[dir="rtl"] td{text-align:right}html[dir="rtl"] .card ul{padding-left:0;padding-right:20px}html[dir="rtl"] nav a:hover,html[dir="rtl"] nav a.active{transform:translateX(-4px)}html[dir="rtl"] .print-btn{right:auto;left:24px}html[dir="rtl"] .author-name{letter-spacing:0}.rate-input{direction:ltr}.rate-result{unicode-bidi:isolate}
 @media(max-width:1000px){html[dir="rtl"] main{margin-right:0}html[dir="rtl"] aside{inset:auto}}@media print{html[dir="rtl"] main{margin:0}html[dir="rtl"] h2{font-size:32px}.language-switch{display:none!important}}
+</style><style id="language-visibility-fix">
+.language-switch{position:fixed!important;top:max(12px,env(safe-area-inset-top));right:16px;left:auto;z-index:2147483000;display:flex!important;visibility:visible!important;opacity:1!important;margin:0!important;padding:6px;background:#102f34;border:1px solid var(--gold);border-radius:14px;box-shadow:0 5px 24px #0008;direction:ltr}
+.language-switch button{min-height:40px;font-size:14px;padding:8px 14px;white-space:nowrap;touch-action:manipulation}
+html[dir="rtl"] .language-switch{right:auto;left:16px}
+@media screen{main{padding-top:78px}}
+@media screen and (max-width:1000px){aside{padding-top:76px!important}main{padding-top:18px}}
+@media print{.language-switch{display:none!important}}
 </style></head>
 <body>
+<div class="language-switch" role="group" aria-label="Language / اللغة"><button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button><button type="button" data-lang="en" lang="en" aria-pressed="true">English</button></div>
 <div class="app">
 <aside>
 <div class="brand">
@@ -321,7 +329,7 @@ html[dir="rtl"] body{font-family:"Segoe UI",Tahoma,Arial,sans-serif}html[dir="rt
 <p>Continuing Professional Development | Proposed framework</p>
 </div>
 </div>
-<div class="language-switch" role="group" aria-label="Language / اللغة"><button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button><button type="button" data-lang="en" lang="en" aria-pressed="true">English</button></div><nav id="nav">
+<nav id="nav">
 <a class="active" href="#cover"><span class="dot"></span> Executive Cover</a>
 <a href="#framework"><span class="dot"></span> Governance Framework</a>
 <a href="#committees"><span class="dot"></span> Committees Portfolio</a>
