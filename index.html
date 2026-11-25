@@ -447,7 +447,71 @@ html[lang="ar"] .cinema-stage .film-controls{direction:rtl}
 @keyframes filmFlash{0%{transform:translateX(-150%);opacity:0}35%{opacity:.85}100%{transform:translateX(150%);opacity:0}}
 @media(prefers-reduced-motion:reduce){.cinema-stage .shot,.cinema-stage .shot *{animation:none!important;transition:none!important}}
 @media print{.cinema-stage{display:none!important}}
-</style><style>.cinema-stage.pseudo-full{position:fixed;inset:0;z-index:2147483002;display:flex;flex-direction:column;justify-content:center;margin:0;border:0;border-radius:0}.cinema-stage.pseudo-full .film{height:calc(100dvh - 105px)}.cinema-stage.pseudo-full .film-controls{flex-shrink:0}</style></head>
+</style><style>.cinema-stage.pseudo-full{position:fixed;inset:0;z-index:2147483002;display:flex;flex-direction:column;justify-content:center;margin:0;border:0;border-radius:0}.cinema-stage.pseudo-full .film{height:calc(100dvh - 105px)}.cinema-stage.pseudo-full .film-controls{flex-shrink:0}</style><style id="visual-system-v6">
+:root{--tool1:#2bb3a3;--tool2:#c6a05a;--tool3:#45b386;--tool4:#82a9c3;--tool5:#d98b79;--tool6:#a9a0d5;--tool7:#9dc6ad}
+@media screen{
+main section:not(#cover){position:relative;isolation:isolate;min-height:0;padding-bottom:42px}
+.section-rail{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.12em}
+.section-rail:after{content:"";height:1px;background:linear-gradient(90deg,var(--gold),transparent);flex:1}
+.section-rail b{font-size:26px;font-weight:600;letter-spacing:0}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.tool-card{--accent:var(--tool1);position:relative;overflow:hidden;isolation:isolate;padding:22px;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:19px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 12%,#102f34),#0a2326);box-shadow:0 14px 32px #0003;min-width:0}
+.tool-card:before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:3px;background:var(--accent)}
+.tool-card:after{content:"";position:absolute;z-index:-1;inset:-70% -50%;background:radial-gradient(ellipse at 72% 30%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 48%);opacity:.6;pointer-events:none}
+.tool-card:nth-child(7n+2){--accent:var(--tool2)}.tool-card:nth-child(7n+3){--accent:var(--tool3)}.tool-card:nth-child(7n+4){--accent:var(--tool4)}.tool-card:nth-child(7n+5){--accent:var(--tool5)}.tool-card:nth-child(7n+6){--accent:var(--tool6)}.tool-card:nth-child(7n+7){--accent:var(--tool7)}
+.tool-icon{width:48px;height:48px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:13px;color:var(--accent);margin-bottom:15px}
+.tool-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tool-card h3{font-size:19px;line-height:1.45;color:var(--accent);margin:0 0 12px}
+.tool-card dl{margin:0;display:grid;gap:10px}.tool-card dt{font-size:11px;color:var(--accent);font-weight:750;margin-bottom:4px}.tool-card dd{margin:0;color:var(--text);line-height:1.65;font-size:14px}
+.tool-card .tool-field{padding-top:10px;border-top:1px solid #ffffff14}
+.tool-card:hover{border-color:var(--accent);transform:translateY(-5px)}
+.source-table-visual{display:none}.source-table-visual.table-open{display:block}
+.visual-toggle{border:1px solid var(--gold);color:var(--gold);background:#102f34;padding:10px 15px;border-radius:12px;cursor:pointer;margin-bottom:12px;font:inherit;font-size:13px}
+.cycle-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:center;margin:24px 0}
+.cycle-wheel{position:relative;aspect-ratio:1;max-width:540px;width:100%;margin:auto;isolation:isolate}
+.cycle-wheel svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.cycle-wheel .orbit{transform-origin:50% 50%;animation:orbitSpin 28s linear infinite}
+.cycle-wheel .segment{fill:none;stroke-width:11;stroke-linecap:round;opacity:.65;transition:opacity .3s,stroke-width .3s}
+.cycle-wheel .segment.selected{opacity:1;stroke-width:15;filter:drop-shadow(0 0 6px currentColor)}
+.cycle-node{position:absolute;width:clamp(42px,6vw,68px);height:clamp(42px,6vw,68px);transform:translate(-50%,-50%);border-radius:50%;background:#102f34;border:2px solid var(--node-color);color:var(--node-color);font-size:clamp(14px,2vw,22px);font-weight:800;cursor:pointer;z-index:3;box-shadow:0 0 18px #0009;transition:box-shadow .3s,background .3s}
+.cycle-node[aria-pressed=true]{background:var(--node-color);color:#071a1d;box-shadow:0 0 28px var(--node-color)}
+.cycle-center{position:absolute;inset:33%;border-radius:50%;display:grid;align-content:center;justify-items:center;text-align:center;background:radial-gradient(circle,#17484a,#0a2225);border:1px solid #c6a05a77;color:var(--gold);font-weight:800;box-shadow:0 0 40px #2bb3a320;padding:9px;font-size:clamp(12px,2vw,24px);line-height:1.4;direction:inherit}
+.cycle-center small{display:block;font-size:11px;color:var(--text);font-weight:500}
+.cycle-detail{min-height:250px;border:1px solid var(--active-color,var(--gold));background:linear-gradient(145deg,#153c40,#0a2326);border-radius:20px;padding:24px}
+.cycle-detail .cycle-count{font-size:46px;color:var(--active-color,var(--gold));line-height:1;font-weight:750}
+.cycle-detail h3{margin:14px 0;color:var(--text);font-size:24px;line-height:1.4}
+.cycle-detail p{margin:0;font-size:15px;color:var(--text)}
+.cycle-detail .cycle-evidence{margin-top:18px;padding-top:15px;border-top:1px solid #ffffff20;color:var(--active-color,var(--gold));font-size:14px;line-height:1.6}
+.cycle-detail.changing{animation:detailChange .55s both}
+.cycle-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.cycle-legend button{border:1px solid #ffffff20;background:#102f34;color:var(--text);text-align:start;border-radius:10px;padding:10px;cursor:pointer;font:inherit;font-size:12px;line-height:1.45;display:flex;align-items:center;gap:9px}
+.cycle-legend button b{color:var(--node-color);font-size:15px}.cycle-legend button[aria-pressed=true]{border-color:var(--node-color);background:#174044}
+.cycle-controls{display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.cycle-controls button{font:inherit;font-size:12px;padding:9px 12px;border:1px solid #c6a05a80;background:#102f34;color:var(--gold);border-radius:9px;cursor:pointer}
+#simulation>.process.cycle-source{display:none}
+#simulation>.process.cycle-source.table-open{display:grid}
+.motion-v6 .tool-card,.motion-v6 .cycle-layout,.motion-v6 .section-rail{opacity:0;transform:translateY(28px) scale(.97)}
+.motion-v6 .tool-card.v6-visible,.motion-v6 .cycle-layout.v6-visible,.motion-v6 .section-rail.v6-visible{animation:toolReveal .9s var(--ease-cinema) both;animation-delay:var(--v6-delay,0ms)}
+.motion-v6 .tool-card.v6-visible:after{animation:toolGlow 6s ease-in-out infinite alternate}
+.motion-v6 .tool-card.v6-visible .tool-icon{animation:iconPop .65s .25s both}
+.motion-v6 .tool-card.v6-visible:hover{transform:translateY(-5px)}
+#committees .card,#framework .grid .card,#cpd .card,#scfhs .grid .card,#rates .card{border-top:3px solid var(--tool1);background:linear-gradient(145deg,#174044,#0a2326)}
+#committees .card:nth-child(3n+2),#framework .grid .card:nth-child(3n+2),#scfhs .grid .card:nth-child(3n+2),#rates .card:nth-child(3n+2){border-top-color:var(--tool2)}
+#committees .card:nth-child(3n+3),#framework .grid .card:nth-child(3n+3),#scfhs .grid .card:nth-child(3n+3),#rates .card:nth-child(3n+3){border-top-color:var(--tool4)}
+#rates .rate-result{display:block;margin-top:12px;font-variant-numeric:tabular-nums}
+#rates .rate-meter{height:8px;border-radius:8px;background:#ffffff14;overflow:hidden;margin-top:10px}
+#rates .rate-meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--teal));transition:width .7s var(--ease-cinema)}
+@media(max-width:1000px){.cycle-layout{grid-template-columns:1fr}.cycle-wheel{max-width:470px}}
+@media(max-width:600px){.tool-grid{grid-template-columns:1fr;gap:12px}.tool-card{padding:17px}.cycle-detail{padding:18px;min-height:0}.cycle-detail h3{font-size:21px}.cycle-wheel{max-width:340px}.cycle-legend{grid-template-columns:1fr}.cycle-center small{font-size:9px}.section-rail{margin-bottom:12px}}
+}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@keyframes detailChange{from{opacity:.3;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toolReveal{from{opacity:0;transform:translateY(28px) scale(.97);filter:blur(3px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes toolGlow{from{transform:translate(-5%,-4%);opacity:.3}to{transform:translate(6%,5%);opacity:.8}}
+@keyframes iconPop{from{transform:scale(.65) rotate(-12deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+@media print{.tool-grid,.cycle-layout,.cycle-legend,.cycle-controls,.visual-toggle,.section-rail,.rate-meter{display:none!important}.source-table-visual,#simulation>.process.cycle-source{display:block!important}.motion-v6 *{animation:none!important;opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.motion-v6 .tool-card,.motion-v6 .cycle-layout,.motion-v6 .section-rail{opacity:1!important;transform:none!important;animation:none!important}.cycle-wheel .orbit{animation:none!important}}
+</style></head>
 <body>
 <div class="reading-progress" aria-hidden="true"><span></span></div>
 <div class="language-switch" role="group" aria-label="Language / اللغة"><button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button><button type="button" data-lang="en" lang="en" aria-pressed="true">English</button></div>
@@ -619,5 +683,26 @@ stage.querySelector('.film-full').addEventListener('click',()=>{if(document.full
 stage.querySelector('.film-skip').addEventListener('click',()=>{pause();if(document.fullscreenElement)document.exitFullscreen?.();stage.classList.remove('pseudo-full');document.querySelector('#cover .hero').scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'})});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')stage.classList.remove('pseudo-full')});if('IntersectionObserver' in window)new IntersectionObserver(e=>{visible=e[0].isIntersecting;if(!visible){if(raf)cancelAnimationFrame(raf);raf=0;last=0;stage.classList.add('paused')}else{updatePlay();start()}},{threshold:.05}).observe(stage);
 stage.classList.add('ready');show(0,!playing);updatePlay();start();})();
+</script><script id="visual-system-v6-js">
+(()=>{const ar=()=>document.documentElement.lang==='ar',lang=(e,a)=>ar()?a:e, colors=['#2bb3a3','#c6a05a','#45b386','#82a9c3','#d98b79','#a9a0d5','#9dc6ad'], reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const make=(tag,cls,parent)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(parent)parent.appendChild(x);return x};const copy=(target,source)=>{target.textContent=source.textContent.trim()};
+const iconPaths=['<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>','<path d="M12 3l8 4v5c0 5-4 8-8 10-4-2-8-5-8-10V7z"/><path d="m8 12 3 3 5-6"/>','<path d="M4 19V5m0 14h16M8 15l4-5 4 3 4-7"/>','<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 10h18M8 3v4m8-4v4m-7 8 2 2 4-4"/>','<path d="M12 3a9 9 0 1 0 9 9M12 3v9h9M16 3v5h5"/>','<path d="M5 20V4h10l4 4v12zM15 4v5h4M8 13h8m-8 4h8"/>','<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/>'];
+const redraws=[];function icon(target,i){const x=make('div','tool-icon',target);x.setAttribute('aria-hidden','true');x.innerHTML='<svg viewBox="0 0 24 24">'+iconPaths[i%iconPaths.length]+'</svg>'}
+function animateWatch(x,i){x.style.setProperty('--v6-delay',Math.min(220,i*65)+'ms');if(observer)observer.observe(x);else x.classList.add('v6-visible')}
+const observer=!reduce&&'IntersectionObserver'in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v6-visible');observer.unobserve(e.target)}}),{threshold:.03}):null;
+function toggleFor(source,after){const btn=make('button','visual-toggle');btn.type='button';btn.setAttribute('aria-expanded','false');source.before(btn);function label(){btn.textContent=source.classList.contains('table-open')?lang('Hide original details','إخفاء التفاصيل الأصلية'):lang('View original details','عرض التفاصيل الأصلية')}btn.onclick=()=>{source.classList.toggle('table-open');btn.setAttribute('aria-expanded',String(source.classList.contains('table-open')));label()};redraws.push(label);label()}
+function cardsFor(id,titleCol){const sec=document.getElementById(id),wrap=sec.querySelector('.table-wrap');if(!wrap)return;const rows=[...wrap.querySelectorAll('tbody tr')],heads=[...wrap.querySelectorAll('thead th')];const grid=make('div','tool-grid');wrap.before(grid);wrap.classList.add('source-table-visual');const list=rows.map((r,i)=>{const cells=[...r.cells],card=make('article','tool-card',grid);icon(card,i);const title=make('h3','',card),dl=make('dl','',card);const fields=cells.map((cell,j)=>{if(j===titleCol)return null;const box=make('div','tool-field',dl),dt=make('dt','',box),dd=make('dd','',box);return{dt,dd,head:heads[j],cell}}).filter(Boolean);animateWatch(card,i);return{title,source:cells[titleCol],fields}});function sync(){list.forEach(x=>{copy(x.title,x.source);x.fields.forEach(z=>{copy(z.dt,z.head);copy(z.dd,z.cell)})})}redraws.push(sync);sync();toggleFor(wrap,grid)}
+cardsFor('quality',2);cardsFor('matrix',2);cardsFor('scfhs',2);cardsFor('dashboard',0);
+const sec=document.getElementById('simulation'),source=sec.querySelector('.process'),steps=[...source.querySelectorAll('.step')];source.classList.add('cycle-source');const layout=make('div','cycle-layout');source.before(layout);const wheel=make('div','cycle-wheel',layout);wheel.style.direction='ltr';const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 400 400');svg.setAttribute('aria-hidden','true');wheel.append(svg);const ns=svg.namespaceURI;const circle=(r,stroke,width,dash)=>{const c=document.createElementNS(ns,'circle');c.setAttribute('cx','200');c.setAttribute('cy','200');c.setAttribute('r',r);c.setAttribute('fill','none');c.setAttribute('stroke',stroke);c.setAttribute('stroke-width',width);if(dash)c.setAttribute('stroke-dasharray',dash);svg.append(c);return c};circle(170,'#c6a05a33',1,'3 7').classList.add('orbit');circle(117,'#ffffff16',1);const segments=[],nodes=[],legendButtons=[];
+const point=(r,a)=>[200+r*Math.cos(a),200+r*Math.sin(a)];for(let i=0;i<steps.length;i++){const a=-Math.PI/2+2*Math.PI*i/steps.length,b=a+2*Math.PI/steps.length;const p=point(146,a+.07),q=point(146,b-.07);const arc=document.createElementNS(ns,'path');arc.setAttribute('d','M'+p.join(' ')+' A146 146 0 0 1 '+q.join(' '));arc.setAttribute('stroke',colors[i]);arc.classList.add('segment');svg.append(arc);segments.push(arc);const tip=point(146,b-.07),l=point(138,b-.17),r=point(154,b-.17);const arrow=document.createElementNS(ns,'path');arrow.setAttribute('d','M'+l.join(' ')+' L'+tip.join(' ')+' L'+r.join(' '));arrow.setAttribute('fill','none');arrow.setAttribute('stroke',colors[i]);arrow.setAttribute('stroke-width','2');svg.append(arrow);const pos=point(146,a),n=make('button','cycle-node',wheel);n.type='button';n.style.left=pos[0]/4+'%';n.style.top=pos[1]/4+'%';n.style.setProperty('--node-color',colors[i]);n.textContent=String(i+1).padStart(2,'0');n.onclick=()=>select(i,true);nodes.push(n)}
+const center=make('div','cycle-center',wheel),centerTitle=make('span','',center),centerSmall=make('small','',center);const right=make('div','',layout),detail=make('div','cycle-detail',right),count=make('div','cycle-count',detail),heading=make('h3','',detail),desc=make('p','',detail),evidence=make('div','cycle-evidence',detail),controls=make('div','cycle-controls',right),prev=make('button','',controls),next=make('button','',controls),play=make('button','',controls);[prev,next,play].forEach(b=>b.type='button');const legend=make('div','cycle-legend');source.before(legend);
+const evidencePairs=[['Training needs evidence / annual CPD plan','أدلة الاحتياجات التدريبية / الخطة السنوية'],['Activity application / SPC membership / disclosures','طلب النشاط / تشكيل لجنة التخطيط العلمي / الإفصاحات'],['Scientific review and decision record','سجل المراجعة العلمية والقرار'],['Accreditation decision and approved details','قرار الاعتماد وتفاصيل النشاط المعتمدة'],['Verified attendance and change records','سجلات الحضور المتحقق منها والتعديلات'],['Organizer completion report / survey analysis','تقرير إنجاز المنظم / تحليل الاستبيانات'],['Closure register / corrective actions / archived evidence','سجل الإغلاق / الإجراءات التصحيحية / الأدلة المؤرشفة']];
+steps.forEach((st,i)=>{const b=make('button','',legend);b.type='button';b.style.setProperty('--node-color',colors[i]);make('b','',b).textContent=String(i+1).padStart(2,'0');make('span','',b);b.onclick=()=>select(i,true);legendButtons.push(b)});
+let active=0,playing=false,timer=null;function syncCycle(){centerTitle.textContent='CPD';centerSmall.textContent=lang('Continuous cycle','دورة مستمرة');steps.forEach((st,i)=>{const t=st.querySelector('b').textContent.trim();nodes[i].setAttribute('aria-label',t);legendButtons[i].querySelector('span').textContent=t});count.textContent=String(active+1).padStart(2,'0')+' / 07';copy(heading,steps[active].querySelector('b'));copy(desc,steps[active].querySelector('span'));evidence.textContent=lang('Evidence / tool: ','الأداة / الدليل: ')+evidencePairs[active][ar()?1:0];prev.textContent=lang('Previous','السابق');next.textContent=lang('Next','التالي');play.textContent=playing?lang('Pause cycle','إيقاف الدورة'):lang('Animate cycle','تشغيل الدورة')}
+function select(i,manual){active=(i+steps.length)%steps.length;detail.style.setProperty('--active-color',colors[active]);nodes.forEach((n,j)=>{n.setAttribute('aria-pressed',String(j===active));legendButtons[j].setAttribute('aria-pressed',String(j===active));segments[j].classList.toggle('selected',j===active)});syncCycle();if(!reduce){detail.classList.remove('changing');void detail.offsetWidth;detail.classList.add('changing')}if(manual&&playing){clearInterval(timer);timer=setInterval(()=>select(active+1,false),4500)}}
+prev.onclick=()=>select(active-1,true);next.onclick=()=>select(active+1,true);play.onclick=()=>{playing=!playing;clearInterval(timer);if(playing)timer=setInterval(()=>select(active+1,false),4500);syncCycle()};redraws.push(syncCycle);select(0,false);animateWatch(layout,0);toggleFor(source,legend);
+document.querySelectorAll('main section:not(#cover)').forEach((sec,i)=>{const rail=make('div','section-rail');rail.setAttribute('aria-hidden','true');make('b','',rail).textContent=String(i+1).padStart(2,'0');sec.prepend(rail);animateWatch(rail,0)});
+document.querySelectorAll('#rates .card').forEach(card=>{const meter=make('div','rate-meter',card),fill=make('span','',meter),out=card.querySelector('output');const sync=()=>{const v=parseFloat(out.textContent);fill.style.width=Number.isFinite(v)&&out.textContent.includes('%')?Math.min(100,Math.max(0,v))+'%':'0%'};new MutationObserver(sync).observe(out,{childList:true,characterData:true,subtree:true});sync()});
+function redraw(){redraws.forEach(fn=>fn())}new MutationObserver(redraw).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});if(observer)document.documentElement.classList.add('motion-v6');})();
 </script></body>
 </html>
