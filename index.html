@@ -621,6 +621,71 @@ main section:not(#cover)>p{max-width:88ch}
 .risk-level-legend div{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text);line-height:1.5}.risk-level-legend i{display:block;width:17px;height:17px;flex:0 0 17px;border-radius:4px;background:var(--risk-fill)}
 .risk-key{font-size:12px;color:var(--muted);line-height:1.6;text-align:center;margin:10px 0}
 @media print{.risk-level-legend,.risk-key{display:none}}
+</style><style id="spacing-v12">
+@media screen{
+html{scroll-padding-top:var(--sticky-height,76px)} main section{scroll-margin-top:12px}
+main{min-width:0} main section,main section *{min-width:0}
+main section h2,main section h3,main section h4,main section p,main section dd,main section dt{overflow-wrap:break-word;word-break:normal}
+main section h2,main section h3,main section h4{line-height:1.45}
+html[lang=ar] main section h2,html[lang=ar] main section h3,html[lang=ar] main section h4{letter-spacing:normal;line-height:1.5}
+main section .card,main section .tool-card,main section .visual-tile,main section .cycle-detail{height:auto;min-height:0;max-height:none;box-sizing:border-box}
+main section .card p:last-child,main section .tool-card dl:last-child,main section .visual-tile p:last-child{margin-bottom:0}
+main section .tool-grid,main section .visual-board,main section .grid,main section .lines-board{align-items:start;gap:16px;margin-block:20px}
+main section .tool-card{align-self:stretch;display:flex;flex-direction:column}
+main section .tool-card dl{gap:12px;flex:1}
+main section .tool-card .tool-field{padding-top:12px}
+main section .tool-card h3{margin-bottom:14px}
+main section .tool-card .status-chip{max-width:100%;white-space:normal}
+main section .visual-tile{align-self:stretch}
+main section .visual-tile .tile-progress{margin-top:auto}
+main section .visual-tile .tile-index{pointer-events:none;position:static;order:-1;align-self:flex-end;font-size:18px;line-height:1;opacity:.65;margin-bottom:3px}
+main section .visual-tile .tile-icon{position:static;margin-top:-18px}
+main section .visual-toggle{display:block;width:max-content;max-width:100%;white-space:normal;line-height:1.5;margin-block:16px 22px;min-height:44px}
+main section .visual-toggle+div.card,main section .audit-note+div.card,main section .audit-note+.card{margin-block-start:20px}
+main section .audit-note{margin-block:22px;padding:14px;line-height:1.75}
+#matrix>.card{margin-top:22px}
+#simulation .cycle-layout{gap:18px;margin-block:20px;align-items:center}
+#simulation .cycle-wheel{width:min(100%,420px);margin:0 auto}
+#simulation .cycle-detail{padding:20px;display:flex;flex-direction:column;gap:13px;overflow:visible!important}
+#simulation .cycle-detail .cycle-count{direction:ltr;unicode-bidi:isolate;align-self:flex-start;font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0}
+#simulation .cycle-detail h3,#simulation .cycle-detail p{margin:0}
+#simulation .cycle-detail .cycle-evidence{margin-top:4px;padding-top:13px;line-height:1.75}
+#simulation .cycle-controls{margin-block:14px 0;gap:8px}
+#simulation .cycle-controls button{min-height:44px;flex:1 1 auto}
+#simulation .cycle-legend{margin-block:18px;gap:9px;align-items:stretch}
+#simulation .cycle-legend button{height:auto;min-height:48px;align-items:center;line-height:1.65;padding:10px 11px}
+#simulation .cycle-legend button b{direction:ltr;unicode-bidi:isolate;flex-shrink:0}
+#simulation .cycle-legend button span{overflow-wrap:anywhere}
+#simulation .cycle-legend button:last-child:nth-child(odd){grid-column:1/-1}
+#simulation .cycle-center{inset:30%;padding:6px;gap:4px}
+#simulation .cycle-center .audit-cycle-title{overflow-wrap:break-word;font-size:clamp(10px,1.4vw,13px);line-height:1.4}
+#simulation .cycle-node{flex-shrink:0}
+.site-controls select{color-scheme:dark}
+@media(max-width:1000px){
+.site-controls{top:0;box-sizing:border-box;min-height:56px;padding:8px 10px;gap:8px}
+.site-controls .site-jump{min-width:0}
+.site-controls .site-jump select{display:block;max-width:100%;height:38px}
+main section{padding:20px 16px!important;margin-bottom:22px}
+#simulation .cycle-layout{grid-template-columns:1fr;gap:15px}
+#simulation .cycle-wheel{max-width:320px}
+}
+@media(max-width:600px){
+main section .tool-grid,main section .grid,main section .visual-board,main section .lines-board{gap:12px}
+main section .tool-card,main section .card,main section .visual-tile{padding:15px}
+main section .tool-card h3{font-size:17px}
+main section .tool-card dd,main section .card p{font-size:14px;line-height:1.8}
+#committees .card{padding-top:64px}
+#simulation .cycle-detail{padding:16px}
+#simulation .cycle-detail h3{font-size:20px}
+#simulation .cycle-detail p,#simulation .cycle-detail .cycle-evidence{font-size:14px}
+#simulation .cycle-wheel{max-width:290px}
+#simulation .cycle-legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+#simulation .cycle-legend button{font-size:12px;padding:9px}
+#matrix .audit-note{margin-bottom:24px}
+#matrix>.card{margin-top:0}
+}
+@media(max-width:360px){#simulation .cycle-legend{grid-template-columns:1fr}.site-controls .language-switch button{padding:4px 6px!important;font-size:11px!important}.site-controls{gap:5px}.visual-board{grid-template-columns:1fr}}
+}
 </style></head>
 <body>
 <div class="reading-progress" aria-hidden="true"><span></span></div>
@@ -726,9 +791,7 @@ main section:not(#cover)>p{max-width:88ch}
 <tr><td>Activity organizer</td><td>Delivery, survey collection and analysis, completion and applicable impact reporting</td><td>Activity completion report and evidence</td><td>Per activity</td></tr><tr><td>CPD administrative function</td><td>Receive and verify submitted reports, track deficiencies and follow up</td><td>Closure tracker and evidence checklist</td><td>Per activity</td></tr></tbody>
 </table>
 </div>
-<div class="footer-note">
-          This interactive HTML presentation is self-contained and can be opened directly in any modern browser or embedded into a local presentation portal.
-        </div>
+
 <div class="card"><h3>Accountability boundaries</h3><p>Assign one accountable owner per decision or control through an approved RACI. Operational management owns implementation; the committee monitors or recommends within its mandate. Independent assurance remains outside operational ownership. Validate all proposed roles with leadership.</p></div></section>
 <section id="scfhs"><div class="kicker">Regulatory alignment • reviewed 25 November 2026</div><h2>SCFHS Requirements &amp; Evidence</h2><p>Reference mapping, not a certification of institutional compliance. Evidence examples and internal ownership require local approval.</p><div class="table-wrap"><table><thead><tr><th>Reference</th><th>Requirement summary</th><th>Suggested evidence</th></tr></thead><tbody><tr><td>Provider 1, 2, 4; Renewal 1</td><td>Valid licence; registered healthcare practitioner as manager; role-specific SCFHS training for initial accreditation and renewal</td><td>Licence, registration, training records</td></tr><tr><td>Provider 5–8; Activity 3.1–3.3; Renewal 2</td><td>Ethics, commercial independence, disclosure, third-party delegation if applicable</td><td>Disclosures, sponsor agreements, delegation form, privacy and consent evidence</td></tr><tr><td>Provider 3, 9–15; Renewal 3.1–3.3</td><td>Vision, mission, structure, operational procedures, scientific oversight and periodic review</td><td>Approved structure, scientific committee appointment or collaboration, policies, resources, safety and communication procedures</td></tr><tr><td>Activity 1.1–1.3</td><td>SPC of at least two qualified experts per activity; target audience and evidence-based content</td><td>Membership, minutes, audience and scientific review records</td></tr><tr><td>Provider 16; Activity 2.1–2.4; Renewal 4.1</td><td>Documented needs, measurable SMART objectives, suitable learning methods and realistic outcomes; new skills require a face-to-face component</td><td>Archived needs evidence, programme and assessment plan</td></tr><tr><td>Provider 19–20; Activity 2.6</td><td>Qualified faculty selection, regular evaluation and feedback</td><td>CVs, selection and feedback records</td></tr><tr><td>Provider 17; Activity 2.5; Renewal 4.2, 4.3.1–4.3.2</td><td>Evaluate changes related to learning objectives; describe evaluation tools, analyze achieved changes and implement improvements</td><td>Session and overall evaluations, change analysis, self-assessment and improvement evidence</td></tr><tr><td>Provider 13,18; Renewal 5.1–5.2</td><td>Registration, participation verification, electronic information and confidentiality</td><td>Attendance logs, registration procedure, access controls</td></tr><tr><td>Renewal 6</td><td>Optional excellence: learner development support, community education and demonstrated patient outcomes</td><td>Evidence where pursued; not mandatory for each activity</td></tr></tbody></table></div><h3 style="margin-top:24px">Mustamir service deadlines</h3><div class="grid"><div class="card"><h4>Conference</h4><p>Pre-book at least one month before the event; apply for accreditation 21 working days before delivery.</p></div><div class="card"><h4>Activity changes</h4><p>Content or speaker changes: 7 days before start. Date or participant count changes: 24 hours before start.</p></div><div class="card"><h4>Attendance</h4><p>Register hours within 5 days after activity end. A 3-day extension may be requested within 30 days after the original registration period ends.</p></div><div class="card"><h4>Reaccreditation</h4><p>Apply 3–6 months before expiry. Submit self-assessment for the previous accreditation period (three years) and evidence of implementation.</p></div></div><h3 style="margin-top:24px">Official references</h3><p><a href="https://scfhs.org.sa/sites/default/files/2023-01/CPD%20Provider%20Accreditation%20Standards.pdf" style="color:inherit">Provider accreditation standards</a><br/><a href="https://scfhs.org.sa/sites/default/files/2023-10/Standards%20for%20Accreditation%20of%20CPD%20Activity%20Submitted%20by%20CPD%20Providers.pdf" style="color:inherit">Activity accreditation standards</a><br/><a href="https://scfhs.org.sa/sites/default/files/2022-12/CPD%20Provider%20Reaccreditation%20Standards%20and%20Guidelines.pdf" style="color:inherit">Provider reaccreditation standards</a><br/><a href="https://scfhs.org.sa/ar/CPD-Activity-Accreditation" style="color:inherit">Activity services and deadlines</a></p><p>Internal closure forms, risk thresholds, RACI and KPI targets are proposed controls, not independently mandated by these sources. Specialized programmes and electronic-provider requirements require separate applicability review.</p></section></main>
 </div>
@@ -795,7 +858,7 @@ const point=(r,a)=>[200+r*Math.cos(a),200+r*Math.sin(a)];for(let i=0;i<steps.len
 const center=make('div','cycle-center',wheel),centerTitle=make('span','',center),centerSmall=make('small','',center);const right=make('div','',layout),detail=make('div','cycle-detail',right),count=make('div','cycle-count',detail),heading=make('h3','',detail),desc=make('p','',detail),evidence=make('div','cycle-evidence',detail),controls=make('div','cycle-controls',right),prev=make('button','',controls),next=make('button','',controls),play=make('button','',controls);[prev,next,play].forEach(b=>b.type='button');const legend=make('div','cycle-legend');source.before(legend);
 const evidencePairs=[['Training needs evidence / annual CPD plan','أدلة الاحتياجات التدريبية / الخطة السنوية'],['Activity application / SPC membership / disclosures','طلب النشاط / تشكيل لجنة التخطيط العلمي / الإفصاحات'],['Scientific review and decision record','سجل المراجعة العلمية والقرار'],['Accreditation decision and approved details','قرار الاعتماد وتفاصيل النشاط المعتمدة'],['Verified attendance and change records','سجلات الحضور المتحقق منها والتعديلات'],['Organizer completion report / survey analysis','تقرير إنجاز المنظم / تحليل الاستبيانات'],['Closure register / corrective actions / archived evidence','سجل الإغلاق / الإجراءات التصحيحية / الأدلة المؤرشفة']];
 steps.forEach((st,i)=>{const b=make('button','',legend);b.type='button';b.style.setProperty('--node-color',colors[i]);make('b','',b).textContent=String(i+1).padStart(2,'0');make('span','',b);b.onclick=()=>select(i,true);legendButtons.push(b)});
-let active=0,playing=false,timer=null;function syncCycle(){centerTitle.textContent='CPD';centerSmall.textContent=lang('Continuous cycle','دورة مستمرة');steps.forEach((st,i)=>{const t=st.querySelector('b').textContent.trim();nodes[i].setAttribute('aria-label',t);legendButtons[i].querySelector('span').textContent=t});count.textContent=String(active+1).padStart(2,'0')+' / 07';copy(heading,steps[active].querySelector('b'));copy(desc,steps[active].querySelector('span'));evidence.textContent=lang('Evidence / tool: ','الأداة / الدليل: ')+evidencePairs[active][ar()?1:0];prev.textContent=lang('Previous','السابق');next.textContent=lang('Next','التالي');play.textContent=playing?lang('Pause cycle','إيقاف الدورة'):lang('Animate cycle','تشغيل الدورة')}
+let active=0,playing=false,timer=null;function syncCycle(){centerTitle.textContent='CPD';centerSmall.textContent=lang('Continuous cycle','دورة مستمرة');steps.forEach((st,i)=>{const t=st.querySelector('b').textContent.trim();nodes[i].setAttribute('aria-label',t);legendButtons[i].querySelector('span').textContent=t});count.dir='ltr';count.textContent=String(active+1).padStart(2,'0')+' / 07';copy(heading,steps[active].querySelector('b'));copy(desc,steps[active].querySelector('span'));evidence.textContent=lang('Evidence / tool: ','الأداة / الدليل: ')+evidencePairs[active][ar()?1:0];prev.textContent=lang('Previous','السابق');next.textContent=lang('Next','التالي');play.textContent=playing?lang('Pause cycle','إيقاف الدورة'):lang('Animate cycle','تشغيل الدورة')}
 function select(i,manual){active=(i+steps.length)%steps.length;detail.style.setProperty('--active-color',colors[active]);nodes.forEach((n,j)=>{n.setAttribute('aria-pressed',String(j===active));legendButtons[j].setAttribute('aria-pressed',String(j===active));segments[j].classList.toggle('selected',j===active)});syncCycle();if(!reduce){detail.classList.remove('changing');void detail.offsetWidth;detail.classList.add('changing')}if(manual&&playing){clearInterval(timer);timer=setInterval(()=>select(active+1,false),4500)}}
 prev.onclick=()=>select(active-1,true);next.onclick=()=>select(active+1,true);play.onclick=()=>{playing=!playing;clearInterval(timer);if(playing)timer=setInterval(()=>select(active+1,false),4500);syncCycle()};redraws.push(syncCycle);select(0,false);animateWatch(layout,0);toggleFor(source,legend);
 document.querySelectorAll('main section:not(#cover)').forEach((sec,i)=>{const rail=make('div','section-rail');rail.setAttribute('aria-hidden','true');make('b','',rail).textContent=String(i+1).padStart(2,'0');sec.prepend(rail);animateWatch(rail,0)});
@@ -865,7 +928,7 @@ const rc=make('div','risk-controls',risk);function riskSelect(en,a){const l=make
 const il=riskSelect('Inherent likelihood','الاحتمالية الكامنة'),ii=riskSelect('Inherent impact','الأثر الكامن'),rl=riskSelect('Residual likelihood','الاحتمالية المتبقية'),ri=riskSelect('Residual impact','الأثر المتبقي');
 const map=make('div','risk-map',risk);map.setAttribute('aria-hidden','true');const cells=[];for(let impact=5;impact>=1;impact--)for(let likelihood=1;likelihood<=5;likelihood++){const c=make('div','risk-cell',map),v=impact*likelihood;c.textContent=String(v);c.dataset.impact=String(impact);c.dataset.likelihood=String(likelihood);c.style.setProperty('--heat',String(.08+.4*v/25));cells.push(c)}
 safe(risk,'div','risk-caption','Rows: impact 5 → 1 • Columns: likelihood 1 → 5 • Solid outline: inherent • Dashed outline: residual','الصفوف: الأثر من 5 إلى 1 • الأعمدة: الاحتمالية من 1 إلى 5 • إطار متصل: الكامن • إطار متقطع: المتبقي');const rw=make('div','risk-result-wrap',risk),r1=make('div','audit-result',rw),r2=make('div','audit-result',rw);rw.setAttribute('aria-live','polite');function riskSync(){const inherent=il.value&&ii.value?Number(il.value)*Number(ii.value):null,residual=rl.value&&ri.value?Number(rl.value)*Number(ri.value):null;r1.textContent=tr('Inherent score: ','درجة الخطر الكامن: ')+(inherent===null?'—':inherent+' / 25');r2.textContent=tr('Residual score: ','درجة الخطر المتبقي: ')+(residual===null?'—':residual+' / 25');cells.forEach(c=>{c.classList.toggle('selected',c.dataset.impact===ii.value&&c.dataset.likelihood===il.value);c.classList.toggle('residual-selected',c.dataset.impact===ri.value&&c.dataset.likelihood===rl.value)})}[il,ii,rl,ri].forEach(x=>x.addEventListener('change',riskSync));syncs.push(riskSync);riskSync();const ra=make('div','audit-actions',risk);const rr=safe(ra,'button','','Reset scores','إعادة ضبط الدرجات');rr.type='button';rr.onclick=()=>{[il,ii,rl,ri].forEach(x=>x.value='');riskSync()};
-const version=make('span','build-version',document.querySelector('.brand>div'));version.textContent='V11';const note=make('p','audit-note');document.querySelector('#matrix .table-wrap').before(note);local(note,'This is a proposed role and reporting map, not an approved RACI. Confirm one accountable owner per decision before implementation.','هذه خريطة مقترحة للأدوار والتقارير وليست مصفوفة RACI معتمدة. حدّد مسؤول مساءلة واحدًا لكل قرار قبل التطبيق.');
+const version=make('span','build-version',document.querySelector('.brand>div'));version.textContent='V12';const note=make('p','audit-note');document.querySelector('#matrix .table-wrap').before(note);local(note,'This is a proposed role and reporting map, not an approved RACI. Confirm one accountable owner per decision before implementation.','هذه خريطة مقترحة للأدوار والتقارير وليست مصفوفة RACI معتمدة. حدّد مسؤول مساءلة واحدًا لكل قرار قبل التطبيق.');
 const regulator=document.querySelector('#scfhs');const rnote=make('p','audit-note');regulator.querySelector('.tool-grid').before(rnote);local(rnote,'Key distinction: provider scientific review (Provider 3; Renewal 3.2) is separate from the activity SPC (Activity 1.1). Evaluation of changes (Activity 2.5) and the aggregated analytical report (Renewal 4.3.2) are distinct levels of evidence.','تمييز أساسي: المراجعة العلمية على مستوى الجهة (اعتماد الجهة 3؛ التجديد 3.2) تختلف عن لجنة التخطيط العلمي للنشاط (الأنشطة 1.1). تقييم التغير (الأنشطة 2.5) والتقرير التحليلي للتغيرات (التجديد 4.3.2) مستويان مختلفان من الأدلة.');
 new MutationObserver(()=>syncs.forEach(fn=>fn())).observe(root,{attributes:true,attributeFilter:['lang']});
 })();
@@ -873,5 +936,5 @@ new MutationObserver(()=>syncs.forEach(fn=>fn())).observe(root,{attributes:true,
 (()=>{const rates=document.getElementById('rates');const button=document.createElement('button');button.type='button';button.className='visual-toggle';button.style.marginTop='12px';rates.after(button);function sync(){button.textContent=document.documentElement.lang==='ar'?'حساب المؤشرات':'Calculate indicators';refreshCPDRates()}button.addEventListener('click',sync);new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});sync();})();
 </script><script id="risk-colors-v11-js">
 (()=>{const map=document.querySelector('#risk-demo .risk-map');if(!map)return;const colors=['#78c99a','#f0d36b','#efa45e','#e87c76'];const bounds=[4,9,16,25];function band(v){return bounds.findIndex(x=>v<=x)}map.querySelectorAll('.risk-cell').forEach(c=>c.style.setProperty('--risk-fill',colors[band(Number(c.textContent))]));const legend=document.createElement('div');legend.className='risk-level-legend';map.after(legend);const key=document.createElement('p');key.className='risk-key';legend.after(key);const rows=[['Low 1–4','منخفض 1–4'],['Moderate 5–9','متوسط 5–9'],['High 10–16','مرتفع 10–16'],['Very high 17–25','مرتفع جدًا 17–25']];const items=rows.map((r,i)=>{const row=document.createElement('div'),swatch=document.createElement('i'),label=document.createElement('span');swatch.style.setProperty('--risk-fill',colors[i]);row.append(swatch,label);legend.append(row);return label});function sync(){const ar=document.documentElement.lang==='ar';items.forEach((e,i)=>e.textContent=rows[i][ar?1:0]);key.textContent=ar?'حدود وألوان توضيحية مقترحة وليست معتمدة. الإطار المتصل: الخطر الكامن؛ الإطار المتقطع: الخطر المتبقي.':'Illustrative thresholds and colors, not approved. Solid outline: inherent risk; dashed outline: residual risk.'}new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});sync();})();
-</script></body>
+</script><script id="spacing-v12-js">(()=>{const controls=document.querySelector('.site-controls');function resize(){const h=controls&&getComputedStyle(controls).position==='sticky'?Math.ceil(controls.getBoundingClientRect().height)+10:76;document.documentElement.style.setProperty('--sticky-height',h+'px')}if(controls&&'ResizeObserver'in window)new ResizeObserver(resize).observe(controls);addEventListener('resize',resize,{passive:true});resize();})();</script></body>
 </html>
